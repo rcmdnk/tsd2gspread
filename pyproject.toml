@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "tsd2gspread"
+version = "0.1.0"
+description = "Time Series Data to Google Sheets"
+authors = ["rcmdnk <rcmdnk@gmail.com>"]
+repository = "https://github.com/rcmdnk/tsd2gspread"
+homepage = "https://github.com/rcmdnk/tsd2gspread"
+readme = "README.md"
+license = "Apache-2.0"
+keywords = ['API', 'Data', 'Google', 'Sheets', 'Spreadsheets']
+
+[tool.poetry.dependencies]
+python = "^3.6"
+gspread = "^3.7.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
