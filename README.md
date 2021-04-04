@@ -86,7 +86,7 @@ and give the file name as `config_file`.
 
 ## Make new inherited class from Tsd2Gspread
 
-    import Tsd2Gspread from tsd2gspread
+    from tsd2gspread import Tsd2Gspread
 
     class MyClass(Tsd2Gspread):
         def get_data(self):
