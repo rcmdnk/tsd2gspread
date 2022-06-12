@@ -2,11 +2,12 @@
 import os
 from datetime import datetime, timedelta, timezone
 
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 
 class Tsd2Gspread():
     def __init__(self, config_file=None, **kw):
+        self.data = None
         self.service_account = None
         self.sheet_name = None
         self.create = None
@@ -30,8 +31,11 @@ class Tsd2Gspread():
 
         self.gc = None
 
-    def get_data(self):
-        return []
+    def get_data(self, force=True):
+        if self.data is not None and not self.force:
+            return self.data
+        self.data = []
+        return self.data
 
     def print_data(self):
         print(self.get_data())
