@@ -31,14 +31,17 @@ class Tsd2Gspread():
 
         self.gc = None
 
-    def get_data(self, force=True):
+    def get_data_wrapper(self, force=True):
         if self.data is not None and not self.force:
             return self.data
-        self.data = []
+        self.data = self.get_data()
         return self.data
 
+    def get_data(self):
+        return []
+
     def print_data(self):
-        print(self.get_data())
+        print(self.get_data_wrapper())
 
     def get_config(self):
         if not self.config_file:
@@ -123,7 +126,7 @@ class Tsd2Gspread():
 
     def get_tsd(self, data=None):
         if data is None:
-            data = self.get_data()
+            data = self.get_data_wrapper()
         if not data:
             print('failed to get data')
             return False
