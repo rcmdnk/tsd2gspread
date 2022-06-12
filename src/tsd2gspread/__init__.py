@@ -2,7 +2,7 @@
 import os
 from datetime import datetime, timedelta, timezone
 
-__version__ = '0.1.3'
+__version__ = '0.1.4'
 
 
 class Tsd2Gspread():
@@ -128,7 +128,7 @@ class Tsd2Gspread():
         data = list(data)
         if self.add_datetime:
             now = datetime.now(
-                timezone(timedelta(hours=self.timedelta))
+                timezone(timedelta(hours=int(self.timedelta)))
             ).strftime('%Y-%m-%d %H:%M:%S')
             data = [now] + data
         return data
