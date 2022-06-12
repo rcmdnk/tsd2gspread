@@ -2,7 +2,7 @@
 import os
 from datetime import datetime, timedelta, timezone
 
-__version__ = '0.1.7'
+__version__ = '0.1.8'
 
 
 class Tsd2Gspread():
@@ -32,7 +32,7 @@ class Tsd2Gspread():
         self.gc = None
 
     def get_data_wrapper(self, force=True):
-        if self.data is not None and not self.force:
+        if self.data is not None and not force:
             return self.data
         self.data = self.get_data()
         return self.data
