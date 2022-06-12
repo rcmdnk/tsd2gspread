@@ -2,7 +2,7 @@
 import os
 from datetime import datetime, timedelta, timezone
 
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 
 
 class Tsd2Gspread():
@@ -124,9 +124,9 @@ class Tsd2Gspread():
         self.set_columns(worksheet)
         return worksheet
 
-    def get_tsd(self, data=None):
+    def get_tsd(self, data=None, force=True):
         if data is None:
-            data = self.get_data_wrapper()
+            data = self.get_data_wrapper(force)
         if not data:
             print('failed to get data')
             return False
@@ -140,8 +140,8 @@ class Tsd2Gspread():
             data = [now] + data
         return data
 
-    def write(self, data=None):
-        data = self.get_tsd(data)
+    def write(self, data=None, force=True):
+        data = self.get_tsd(data, force)
         if not data:
             return False
         worksheet = self.get_worksheet()
