@@ -154,7 +154,7 @@ class Tsd2Gspread():
 
     def log_text(self, data=None, force=True):
         data = self.get_tsd(data, force)
-        return ','.join(data)
+        return ','.join([str(x) for x in data])
 
 
 def get(**kw):
