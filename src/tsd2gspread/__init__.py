@@ -2,11 +2,12 @@
 import os
 from datetime import datetime, timedelta, timezone
 
-__version__ = '0.1.8'
+__version__ = '0.1.9'
 
 
 class Tsd2Gspread():
     def __init__(self, config_file=None, **kw):
+        self.log = None
         self.data = None
         self.service_account = None
         self.sheet_name = None
@@ -146,7 +147,14 @@ class Tsd2Gspread():
             return False
         worksheet = self.get_worksheet()
         worksheet.append_row(data, value_input_option=self.value_input_option)
+        if self.log:
+            with open(self.log, 'w') as f:
+                f.write(self.log_text(data, force=False))
         return True
+
+    def log_text(self, data=None, force=True):
+        data = self.get_tsd(data, force)
+        return ','.join(data)
 
 
 def get(**kw):
