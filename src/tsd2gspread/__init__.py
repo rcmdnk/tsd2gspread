@@ -142,11 +142,11 @@ class Tsd2Gspread():
         return data
 
     def write(self, data=None, force=True):
-        data = self.get_tsd(data, force)
-        if not data:
+        tsd_data = self.get_tsd(data, force)
+        if not tsd_data:
             return False
         worksheet = self.get_worksheet()
-        worksheet.append_row(data, value_input_option=self.value_input_option)
+        worksheet.append_row(tsd_data, value_input_option=self.value_input_option)
         if self.log:
             with open(self.log, 'w') as f:
                 f.write(self.log_text(data, force=False))
