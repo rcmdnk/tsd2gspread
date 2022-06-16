@@ -2,7 +2,7 @@
 import os
 from datetime import datetime, timedelta, timezone
 
-__version__ = '0.1.9'
+__version__ = '0.1.10'
 
 
 class Tsd2Gspread():
