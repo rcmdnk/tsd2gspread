@@ -122,14 +122,14 @@ tool = ["click (>=6.0.0)"]
 
 [[package]]
 name = "gspread"
-version = "5.1.1"
+version = "5.7.2"
 description = "Google Spreadsheets Python API"
 category = "main"
 optional = false
 python-versions = ">=3.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 files = [
-    {file = "gspread-5.1.1-py3-none-any.whl", hash = "sha256:ffba57786e27519fb97125e3de37a0f062134a396506681f5baacaf47a9febe3"},
-    {file = "gspread-5.1.1.tar.gz", hash = "sha256:d9db8c43d552f541ea072d4727d1e955bc2368b095dd86c5429a845c9d8aed8f"},
+    {file = "gspread-5.7.2-py3-none-any.whl", hash = "sha256:dbeedd08c6a7f7b0bfc1a54e17c29205362250c77bf98e11125c5d99fd7f4ba7"},
+    {file = "gspread-5.7.2.tar.gz", hash = "sha256:ce76f9c16b88ccb792350142224a59afa8e69f7463f3d3417148cbe892efc7cb"},
 ]
 
 [package.dependencies]
