@@ -1,0 +1,33 @@
+repos:
+- repo: https://github.com/rcmdnk/pyproject-pre-commit
+  rev: v0.3.6
+  hooks:
+  - id: ruff-lint-diff
+  - id: ruff-lint
+  - id: ruff-format-diff
+  - id: ruff-format
+  - id: mypy
+  - id: shellcheck
+  - id: mdformat-check
+  - id: mdformat
+  - id: validate-pyproject
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+    - id: check-byte-order-marker
+    - id: check-yaml
+    - id: check-json
+    - id: check-toml
+    - id: check-case-conflict
+    - id: check-merge-conflict
+      args:
+        - "--assume-in-merge"
+    - id: end-of-file-fixer
+    - id: fix-byte-order-marker
+    - id: mixed-line-ending
+    - id: trailing-whitespace
+    - id: debug-statements
+    - id: detect-private-key
+    - id: detect-aws-credentials
+      args:
+        - "--allow-missing-credentials"
